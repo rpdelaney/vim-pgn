@@ -47,7 +47,7 @@ syn match pgnNumber		"-\=\<[0-9]*\>\.\.\."
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
-if version >= 508 || !exists("did_pgsql_syn_inits")
+if version >= 508 || !exists("did_pgn_syn_inits")
   if version < 508
     let did_pgsql_syn_inits = 1
     command -nargs=+ HiLink hi link <args>
@@ -69,6 +69,7 @@ endif
 " Definition 1}}}
 
 let b:current_syntax = "pgn"
+let b:did_pgn_syn_inits = "1"
 
 " Section: Modelines {{{1
 " vim600: set foldmethod=marker foldlevel=0 :
