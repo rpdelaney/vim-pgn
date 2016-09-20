@@ -36,6 +36,11 @@ syn match pgnOperator	"\$[0-9]\+"
 syn match pgnSpecial	"^%.*"
 " Tokens
 syn match pgnFunction	"[\*\[\]\>\<]"
+" Game-end notation
+syn match pgnOperator	"1/2-1/2"
+syn match pgnOperator	"1-0"
+syn match pgnOperator	"0-1"
+syn match pgnOperator	"\*"
 
 
 " Move numbers
