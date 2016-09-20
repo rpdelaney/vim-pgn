@@ -22,12 +22,12 @@ endif
 
 " Section: Syntax {{{1
 " Variations
-syn region pgnType		start=+(+				end=+)+
+syn region pgnType		start=+(+				end=+)+			contains=pgnComment
 " Comments
 syn region pgnComment	start=+{+				end=+}+
 syn match  pgnComment	";.*"
 " Headers
-syn region pgnFlow		start=+\[+	skip=+"+	end=+\]+
+syn region pgnFlow		start=+\[+	        	end=+\]+		contains=pgnString
 " Strings
 syn region pgnString	start=+"+				end=+"+
 " Numeric Annotation Glyphs
@@ -35,12 +35,14 @@ syn match pgnOperator	"\$[0-9]\+"
 " Escape mechanism
 syn match pgnSpecial	"^%.*"
 " Tokens
-syn match pgnOperator	"[\*\[\]\>\<]"
+syn match pgnFunction	"[\*\[\]\>\<]"
 
 
 " Move numbers
-syn match pgnNumber		"-\=\<[0-9]*\>."
+syn match pgnNumber		"-\=\<[0-9]*\>\."
+syn match pgnNumber		"-\=\<[0-9]*\>\.\.\."
 " Syntax 1}}}
+
 " Section: Definition {{{1
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
