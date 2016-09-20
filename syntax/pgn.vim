@@ -22,30 +22,30 @@ endif
 
 " Section: Syntax {{{1
 " Variations
-syn region pgnType		start=+(+				end=+)+			contains=pgnComment
+syn region pgnType      start=+(+    end=+)+    contains=pgnComment
 " Comments
-syn region pgnComment	start=+{+				end=+}+
-syn match  pgnComment	";.*"
+syn region pgnComment   start=+{+    end=+}+
+syn match  pgnComment   ";.*"
 " Headers
-syn region pgnFlow		start=+\[+	        	end=+\]+		contains=pgnString
+syn region pgnFlow      start=+\[+   end=+\]+  contains=pgnString
 " Strings
-syn region pgnString	start=+"+				end=+"+
+syn region pgnString    start=+"+    end=+"+
 " Numeric Annotation Glyphs
-syn match pgnOperator	"\$[0-9]\+"
+syn match pgnOperator   "\$[0-9]\+"
 " Escape mechanism
-syn match pgnSpecial	"^%.*"
+syn match pgnSpecial    "^%.*"
 " Tokens
-syn match pgnFunction	"[\*\[\]\>\<]"
+syn match pgnFunction   "[\*\[\]\>\<]"
 " Game-end notation
-syn match pgnOperator	"1/2-1/2"
-syn match pgnOperator	"1-0"
-syn match pgnOperator	"0-1"
-syn match pgnOperator	"\*"
+syn match pgnOperator   "1/2-1/2"
+syn match pgnOperato    "1-0"
+syn match pgnOperato    "0-1"
+syn match pgnOperato    "\*"
 
 
 " Move numbers
-syn match pgnNumber		"-\=\<[0-9]*\>\."
-syn match pgnNumber		"-\=\<[0-9]*\>\.\.\."
+syn match pgnNumber     "-\=\<[0-9]*\>\."
+syn match pgnNumber     "-\=\<[0-9]*\>\.\.\."
 " Syntax 1}}}
 
 " Section: Definition {{{1
@@ -60,15 +60,15 @@ if version >= 508 || !exists("did_pgn_syn_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  HiLink pgnKeyword		Statement
-  HiLink pgnSpecial		Special
-  HiLink pgnString		String
-  HiLink pgnNumber		Number
-  HiLink pgnVariable	Identifier
-  HiLink pgnComment		Comment
-  HiLink pgnType		Type
-  HiLink pgnOperator	Statement
-  HiLink pgnFunction	Function
+  HiLink pgnKeyword     Statement
+  HiLink pgnSpecial     Special
+  HiLink pgnString      String
+  HiLink pgnNumber      Number
+  HiLink pgnVariable    Identifier
+  HiLink pgnComment     Comment
+  HiLink pgnType        Type
+  HiLink pgnOperator    Statement
+  HiLink pgnFunction    Function
   delcommand HiLink
 endif
 " Definition 1}}}
